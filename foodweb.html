@@ -1,0 +1,234 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Delicious — Modern Food Site</title>
+  <style>
+    :root{
+      --bg:#0d0d0f; --card:#1a1a1d; --muted:#a1a1aa; --accent:#ef4444; --accent-2:#f97316; --radius:14px;
+      --max-width:1100px; --gap:20px;
+      font-family: Inter, ui-sans-serif, system-ui;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:#f3f3f3}
+    .container{max-width:var(--max-width);margin:0 auto;padding:28px}header{position:sticky;top:0;z-index:50;background:rgba(26,26,29,0.8);backdrop-filter:blur(6px);border-bottom:1px solid #333}
+.nav-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:#fff}
+.brand .logo{width:40px;height:40px;border-radius:8px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800}
+nav ul{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+nav a{text-decoration:none;color:var(--muted);padding:8px 10px;border-radius:10px}
+nav a:hover{background:#2a2a2d;color:#fff}
+.cta{padding:8px 12px;background:var(--accent);color:#fff;border-radius:10px;text-decoration:none}
+
+.hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:36px 0}
+.hero-left h1{font-size:36px;margin:0 0 12px;color:#fff}
+.hero-left p{color:var(--muted);margin:0 0 18px}
+.search{display:flex;gap:10px}
+.search input{flex:1;padding:14px;border-radius:12px;border:1px solid #333;background:#1e1e21;color:#fff}
+.search button{padding:12px 16px;border-radius:12px;border:none;background:var(--accent);color:white}
+.hero-right{background:#1a1a1d;border-radius:16px;padding:18px;box-shadow:0 6px 30px rgba(0,0,0,0.3)}
+.hero-right img{width:100%;border-radius:12px;display:block}
+
+.section{padding:36px 0}
+.section h2{margin:0 0 18px;color:#fff}
+.gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.card{background:var(--card);border-radius:12px;padding:12px;box-shadow:0 6px 20px rgba(0,0,0,0.35)}
+.card img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+.card h3{margin:10px 0 4px;font-size:16px;color:#fff}
+.card p{margin:0;color:var(--muted);font-size:13px}
+
+.blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.blog-card{display:flex;gap:12px;align-items:flex-start;background:#1a1a1d;padding:12px;border-radius:12px}
+.blog-card img{width:120px;height:80px;object-fit:cover;border-radius:8px}
+
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.contact-form{background:var(--card);padding:18px;border-radius:12px}
+.contact-form input,.contact-form textarea{width:100%;padding:10px;margin-bottom:8px;border-radius:8px;border:1px solid #333;background:#1e1e21;color:#fff}
+.btn{display:inline-block;padding:10px 14px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none}
+
+footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid #333}
+
+@media (max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .blog-grid{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  nav ul{display:none}
+  .mobile-menu{display:inline-flex}
+}
+
+.muted{color:var(--muted)}
+.tags{display:flex;gap:8px;flex-wrap:wrap}
+.tag{background:#2a2a2d;padding:6px 8px;border-radius:999px;border:1px solid #333;font-size:12px;color:#fff}
+
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-row">
+      <div class="brand"><div class="logo">F</div>Delicious</div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#gallery">Food</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div style="display:flex;gap:10px;align-items:center">
+        <a class="cta" href="#contact">Order Now</a>
+        <button class="mobile-menu" style="display:none">☰</button>
+      </div>
+    </div>
+  </header>  <main class="container">
+    <section id="home" class="hero">
+      <div class="hero-left">
+        <h1>Fresh. Fast. Flavorful.</h1>
+        <p>Explore delicious recipes, local favorites, and seasonal dishes. Beautiful, modern layout inspired by clean food sites.</p><div class="search">
+      <input id="searchInput" type="search" placeholder="Search dishes, ingredients or recipes..." />
+      <button id="searchBtn">Search</button>
+    </div>
+
+    <div style="margin-top:16px" class="tags">
+      <span class="tag">Vegan</span><span class="tag">Quick</span><span class="tag">Desserts</span>
+    </div>
+  </div>
+
+  <aside class="hero-right">
+    <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80" alt="Hero dish" />
+  </aside>
+</section>
+
+<section id="gallery" class="section">
+  <h2>Food Gallery</h2>
+  <div class="gallery" id="galleryGrid">
+    <!-- sample cards -->
+    <article class="card" data-title="Classic Burger">
+      <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=800&q=80" alt="Burger">
+      <h3>Classic Burger</h3>
+      <p class="muted">Grilled beef patty, melted cheese, fresh lettuce.</p>
+    </article>
+
+    <article class="card" data-title="Pasta Primavera">
+      <img src="https://images.unsplash.com/photo-1521389508051-d7ffb5dc8c01?auto=format&fit=crop&w=800&q=80" alt="Pasta">
+      <h3>Pasta Primavera</h3>
+      <p class="muted">Seasonal vegetables and light garlic sauce.</p>
+    </article>
+
+    <article class="card" data-title="Sushi Platter">
+      <img src="https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=800&q=80" alt="Sushi">
+      <h3>Sushi Platter</h3>
+      <p class="muted">Fresh nigiri and maki selection.</p>
+    </article>
+
+    <article class="card" data-title="Chocolate Cake">
+      <img src="https://images.unsplash.com/photo-1601972599720-36938d3f8a36?auto=format&fit=crop&w=800&q=80" alt="Cake">
+      <h3>Chocolate Cake</h3>
+      <p class="muted">Rich and moist with dark ganache.</p>
+    </article>
+
+    <article class="card" data-title="Avocado Salad">
+      <img src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?auto=format&fit=crop&w=800&q=80" alt="Salad">
+      <h3>Avocado Salad</h3>
+      <p class="muted">Crisp greens, creamy avocado, citrus dressing.</p>
+    </article>
+
+    <article class="card" data-title="Ramen Bowl">
+      <img src="https://images.unsplash.com/photo-1604908553898-184eab5b8f85?auto=format&fit=crop&w=800&q=80" alt="Ramen">
+      <h3>Ramen Bowl</h3>
+      <p class="muted">Umami-rich broth with tender noodles.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="blog" class="section">
+  <h2>Latest from the Blog</h2>
+  <div class="blog-grid">
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Blog 1">
+      <div>
+        <h3>5 Quick Weeknight Dinners</h3>
+        <p class="muted">Time-saving recipes that don't sacrifice flavor.</p>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=400&q=80" alt="Blog 2">
+      <div>
+        <h3>How to Build the Perfect Salad</h3>
+        <p class="muted">Balance texture, taste and dressing for the best results.</p>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>About</h2>
+  <div class="two-col">
+    <div>
+      <p class="muted">Delicious is a clean, modern food site template showcasing recipes, a curated gallery, and a blog. Built for clarity and speed — easy to adapt for restaurants, personal chefs, or food bloggers.</p>
+      <ul>
+        <li>Clean design, responsive layout</li>
+        <li>Easy gallery and blog sections</li>
+        <li>Accessible forms and simple interactions</li>
+      </ul>
+    </div>
+    <div>
+      <div style="background:linear-gradient(180deg,#fff,#fff);padding:14px;border-radius:12px;box-shadow:0 6px 20px rgba(15,23,42,0.04)">
+        <h3>Our mission</h3>
+        <p class="muted">To help people find delicious food ideas and bring them to life.</p>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="two-col">
+    <div class="contact-form">
+      <label>Name</label>
+      <input type="text" placeholder="Your name" />
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" />
+      <label>Message</label>
+      <textarea rows="5" placeholder="Write your message..."></textarea>
+      <button class="btn">Send message</button>
+    </div>
+    <div>
+      <h3>Visit us</h3>
+      <p class="muted">123 Food Street, Flavor Town</p>
+      <h4>Opening hours</h4>
+      <p class="muted">Mon — Sun: 9:00 — 21:00</p>
+    </div>
+  </div>
+</section>
+
+  </main>  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+        <div>© <strong>Delicious</strong> 2025 — Crafted with care</div>
+        <div class="muted">Home · Food · Gallery · Blog · About · Contact</div>
+      </div>
+    </div>
+  </footer>  <script>
+    // simple search: filter gallery cards by title
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.getElementById('searchBtn');
+    const gallery = document.getElementById('galleryGrid');
+    searchBtn.addEventListener('click', ()=> filterGallery());
+    searchInput.addEventListener('keydown', (e)=>{ if(e.key === 'Enter') filterGallery(); });
+    function filterGallery(){
+      const q = searchInput.value.trim().toLowerCase();
+      const cards = gallery.querySelectorAll('.card');
+      cards.forEach(c=>{
+        const title = c.dataset.title.toLowerCase();
+        c.style.display = title.includes(q) || q === '' ? '' : 'none';
+      })
+    }
+  </script></body>
+</html>
